@@ -1,0 +1,138 @@
+Bash to Ruby:
+$ ruby <ruby file name> ~ runs the ruby file
+$ irb <enter>
+<ruby commands> ~ runs the ruby commands without having to create a ruby file.
+exit ~ leaves ruby environment
+  note that commands run in irb will also print what the function returns. In the case of the put command it returns "nil"
+
+puts ~ print command with new line after
+print ~ normal print command
+  don't need parenthesis like python and other languages maybe C++
+#comment out text
+=begin
+stuff
+=end  ~ multi line comments, put stuff between the =begin and =end
+  make sure that there is no space between the = and the end or begin
+  also begin and end have to be on their own lines
+<string>.length ~ method that returns the length of a string
+<string>.reverse
+<string>.upcase
+<string>.downcase
+get.chomp ~ gets input from user, removes newline
+.downcase ~ makes all words lowercase
+.upcase ~ makes all words uppercase
+.capitalize ~ capitalize the first letter of each word
+string interpolation
+  puts "Your name is #{first_name}!"
+Integer(var) ~ returns invalid if the var is not an integer
+if stuff
+  do stuff
+elsif stuff
+  do stuff
+else
+  do stuff
+  ~  the conditions to check are not in parenthesis
+  ~  note the "s" in elsif
+end ~ if, while, until statments must end with "end"
+while ~ do something while expression is true
+until ~ do something until expersion is false
+for loops for when you know the number of times you want to loop
+for i in 1..5 goes 1 2 3 4 5, includes 5
+for i in 1...5 goes 1 2 3 4, doesn't include 5
+do ~ start code block
+end ~ end code block
+{} genrally interchangeable with do and end
+break ~ stops innermost loop when condition is met
+next ~ used to skip over steps in loop
+
+.include? ~ evaluates to true if it finds substring
+.gsub ~ stands for global substitution
+A.gsub (x,y) command to replace all occurances of x with y in string A?
+
++= ~ subtract value and assign to variable
+-= ~ subtract value and assign to variable
+Ruby doesn't have [ ++ or -- which increment by one either by addition or subtraction]
+
+my_array = [3, 5 , 7 , 8, 10] ~ create an array using brackets separate value with commas
+
+.each ~ applies method to every value in array ex
+object.each { |item| 
+  # Do something 
+}
+or
+object.each do |item| 
+  # Do something 
+end
+item is a placeholder for the value in the array at that particular index
+.times ~ method is like a super compact for loop: it can perform a task on each item in an object a specified number of times.
+
+.split takes a string and returns an array, can pass a dilimiter in parenthesis
+text.split(",")
+
+hash literal notation
+hash = {
+  key1 => value1,
+  key2 => value2,
+  key3 => value3
+}
+
+the hash syntax changed in Ruby 1.9
+new_hash = { 
+  one: 1,
+  two: 2,
+  three: 3
+}
+
+You put the colon at the end of the symbol, not at the beginning;
+You don’t need the hash rocket anymore.
+
+my_hash = Hash.new ~ creating a variable and setting it equal to an empty hash
+ ~ Hash.new must be capitalized
+ 
+hash_new[key1] = value1 ~ how to add a key value pair to a hash using bracket notation
+
+restaurant_menu.each do |item, price|   ~iterating over a hash
+  puts "#{item}: #{price}"
+end  
+
+.to_s ~ converts to string
+.to_sym ~ converst to a symbol
+
+.sort ~ call on end of array, sorts it smallest to biggest, can also sort alphabetically A to Z, ascending order
+<=> ~ combined comparison operator, returns: 0 if they are equal, -1 if first parameter should come before the second, 1 if vice versa
+? had a hard time wrapping my head around this, make into a flash card
+.sort_by ~ must give a block telling it what value to sort by, creates a sort of histogram
+
+.select ~ filter for hashes that meet a criteria
+
+.push ~ method allows you to add an element to the end of an array
+.intern ~ converts to symbol as well
+
+.each_key ~ iterates over just the keys
+.each_value ~ iterates over just the values
+
+hash_name.delete(symbol_name)! ~removing a key value pair from a hash
+
+unless ~ executes code if conditional is false
+
+||= ~ only assigns if it doesn't already have a value
+
+starting_number.upto(ending number) ~goes through a range of numbers or letters
+starting_number.downto(ending number) ~decreases until the given number or letter
+
+.respond_to? ~ takes a symbol and returns true if an object can receive that method and false otherwise
+
+.next ~ return the integer immediately following the integer it’s called on, meaning 4.next will return 5
+
+<< ~ add to the end of an array or to a string
+
+.collect ~ can be used with blocks to apply the expression in the block to each element in the array
+my_nums = [1, 2, 3], does this with a copy, has to use ! on the end to make changes permanent
+
+yield ~ define in a method when it gives control to the block given to the method
+
+Proc.new ~ pass a block that you want to change into a proc
+& converts the proc into a block to be used by the method
+.call ~executes a procs code directly without creating a method to call it.
+
+lambda ~ converts code into a lambda which is like a proc but more strict

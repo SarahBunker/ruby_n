@@ -1,0 +1,190 @@
+"
+# I'm a full line comment!
+"Eric".length # I'm a comment, too!
+The second example will return 4, since the comment comes after the code that Ruby will execute." (Codecademy 10.single line commands)
+ Q - will all comments return 4?
+ A - this was reffering to the fact that the length of the text was 4 so it would return 4. The comment wouldn't affect the prior code)
+ so > codes do not have return values
+ 
+ When doing do...end blocks, prefer {} when the entire code expression fits on one line
+  ?  what would be the other option, multiple lines? do you use different parenthesis when it goes over more lines?
+  (from launch school course style guide probably RB100)
+
+letters = ['a', 'b', 'c', 'd']
+letters.each do |letter|
+  print letter
+end (codeacdemy 4.Redacted)
+ Q - why do you pass the itterator to the .each command in vertical bars?
+ A - 
+ 
+puts "get user text"
+text = gets.chomp
+puts "get words to redact"
+redact = gets.chomp
+redacted = false
+
+redact1 = redact.split(" ")
+words = text.split(" ")
+words.each do |x|
+  redact1.each do |redact|
+    if x == redact
+      redacted = true
+    elsif x == redact.capitalize
+      redacted = true
+    elsif x == redact.downcase
+      redacted = true
+    elsif x == redact.upcase
+      redacted = true
+    else 
+      redacted = false
+    end
+  end
+  if redacted
+    print "REDACTED "
+  else
+    print x + " "
+  end
+end
+
+# the above file only redacts the last word that was given to be redacted
+# FIX ME so that it will redact each word but only print once
+(codeacdemy 6. Redacted)
+ Q - How could you make your program take multiple, separate words to REDACT?
+ Q - How might you make a new redacted string and save it as a variable, rather than just printing it to the console?
+
+languages.each {|x| puts "#{x}"}
+and 
+languages.each {|x| puts x}
+both work  (codeacdemy 10 Data Structures)
+ Q - what is the difference? what is the "#{x}" doing?
+ A. - 
+ 
+ #############################################################################33
+ HASHES AND SYMBOLS
+ 
+ keys must be unique
+ values can repeat
+ 
+matz.each {|key,value|
+  puts matz[key]
+}
+~ prints each value on its own line
+
+objects are considered truthy
+if 2     ~ stuff 2 would be ran because 2 is considered true
+ stuff 2
+else
+ stuff else
+end
+
+false != nil
+false ~ not true
+nil ~ nothing at all
+
+when accessing a key that isn't there, nil is returned
+
+How to do an xor operation in Ruby?
+found some stuff on ^ but that is bitwise operators?
+    A - 
+    
+################################################
+https://launchschool.com/books/ruby/read/methods
+
+Make sure you don't mix up method invocation with a block and method definition when you're working with local variable scope issues.
+They may look similar at first, but they are not the same. They have different behaviors when it comes to local variable scope.
+--------------------------------
+--------------------------------
+# Method invocation with a block
+
+[1, 2, 3].each do |num|
+  puts num
+end
+
+---------
+
+# Method definition
+
+def print_num(num)
+  puts num
+end
+
+Q after their examples I still don't get how the scope is different. in both cases num was not accessible outside of it.
+A 
+
+########################################################33
+https://launchschool.com/books/ruby/read/methods
+Q How come running mutate.rb using
+ruby mutate.rb
+does not print the return statements from the mutate? but
+irb
+... set up stuff
+p mutate
+
+A because I didn't have the print statement in my .rb file before mutate(a)
+
+############################################################
+https://launchschool.com/books/ruby/read/arrays#commonarraymethods
+Q What is an Enumerator?
+A 
+
+###############################################################
+https://launchschool.com/books/ruby/read/intro_exercises
+Q What is the difference between map, each, collect
+A
+
+################################################
+https://launchschool.com/exercises/2bd87dd4
+Q what is shadowing
+A
+
+################################################
+/rb_basics_exercises/variable_scope/variable_scope.rb
+why did a start out at value 1 in my test script?
+
+#################################################
+https://launchschool.com/exercises/d09a086c
+I have been using .chomp on all inputs is it only needed on text inputs?
+Or if my input is an integer does .to_i get rid of the new line?
+
+##############################################
+https://launchschool.com/exercises/6a0e4565
+https://ruby-doc.org/core-2.6.3/String.html#method-c-new
+This exercise wanted me to create an empty string, I used String::new and the solution has String.new
+  For class methods is it always using the dot operator?
+  My solution seemed to work, is there a difference between String::new and String.new?
+  
+#################################################
+https://launchschool.com/exercises/b2cdd5b3
+%Q is an alternative to double-quoted strings. There's also an alternative for single-quoted strings: %q.
+
+  Q What about strings that contain double- and single-quotes? How would you write those using the alternate syntax?
+  A 
+  
+###############################################
+https://launchschool.com/lessons/a0f3cd44/assignments/1540db7b
+
+  Q What are the limits of .to_i?
+
+https://ruby-doc.org/core-2.6.3/String.html#method-i-to_i
+  
+  Q what does it mean integer base base between 2 and 36?
+  
+I think this is something about changing the base of the number, and the default is 10
+  
+#######################################################
+https://launchschool.com/lessons/a0f3cd44/assignments/f76e5b21
+nil && 1 / 0         # nil
+5 || 1 / 0           # 5
+
+  Q Why do these boolean statements return nil and 5 respectively instead of false?
+  
+try using inspect and object_id
+
+###################################################
+does ruby have memory leaks? in C++ we had to clean up old information
+
+
+#################################
+Lesson 2 quiz
+
+what is !! and what does it do?

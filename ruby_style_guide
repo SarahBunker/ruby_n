@@ -1,0 +1,23 @@
+use two space indentation
+  use indentation in if else blocks
+# ~ comment
+=begin
+stuff
+=end  ~ multi line comments, put stuff between the =begin and =end
+  make sure that there is no space between the = and the end or begin
+  also begin and end have to be on their own lines
+snake_case formatting
+  initializing or defining a method,variable, or file
+  use all lowercase letters and separate words with underscores
+uppercase letters
+  Constants are defined using all
+CamelCase formatting
+  Define classes using 
+  no spaces and capitalizes the beginnings of words
+  Also known as PascalCase because it is based on the naming style of the Pascal programming language.
+When doing do...end blocks, prefer {} when the entire code expression fits on one line
+  ?  what would be the other option, multiple lines? do you use different parenthesis when it goes over more lines?
+
+  
+Ruby style guide is available for refference
+https://github.com/rubocop/ruby-style-guide

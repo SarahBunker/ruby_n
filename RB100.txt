@@ -1,0 +1,41 @@
+to run Ruby code you first have to create a Ruby file and then run that file.
+ruby files end with RB ex:
+example.rb
+
+next use the bash command "ruby" with the arguement <file name>. ex:
+$ ruby example.rb
+and the output would be the result of running that ruby file.
+
+Can also run ruby commands directly in bash by using irb which creates a ruby environment in the commmand line.
+$ irb <enter>
+<ruby commands> ~ runs the ruby commands without having to create a ruby file.
+exit ~ leaves ruby environment
+  note that commands run in irb will also print what the function returns. In the case of the put command it returns "nil"
+
+notes continued in ruby_style_guide.txt
+
+assigning variables use a single = sign
+
+defining a method:
+def method_name
+  stuff_method_does
+end
+  ? are there no parenthesis or end punctuation?
+  
+###############################################
+Book: Introduction to Programming with Ruby
+
+Use one git repository for all exercises in the Ruby book. (Remember: don't nest git repositories.)
+Create a folder within that repository for each chapter in the book.
+Create a separate file for every exercise in the chapter.
+
+Notes moving to repository
+
+###########################################
+Ruby Version Manager
+
+sometimes code will only run on a certain version of Ruby
+  rather then installing and uninstalling Ruby the solution is to use a ruby version manager
+  RVM recommended for cloud9 or Linux
+  check if rvm is already installed on Cloud9 by typing rvm --help
+  rvm is installed
